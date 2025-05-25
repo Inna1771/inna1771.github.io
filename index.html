@@ -2,32 +2,6 @@
 <html>
 <head>
   <link rel="icon" href="https://img.icons8.com/fluency/48/000000/cat-footprint.png">
-  <script>
-  $(function(){
-    // Carga alternativa más detallada
-    fetch('chatbot.html')
-      .then(response => response.text())
-      .then(data => {
-        const bubble = $(data).find('#chatbubble');
-        const window = $(data).find('#chatwindow');
-        
-        if(bubble.length) {
-          $('#chatbubble-container').html(bubble);
-        } else {
-          console.error('No se encontró #chatbubble en chatbot.html');
-        }
-        
-        if(window.length) {
-          $('#chatwindow-container').html(window);
-        } else {
-          console.error('No se encontró #chatwindow en chatbot.html');
-        }
-      })
-      .catch(error => {
-        console.error('Error cargando chatbot:', error);
-      });
-  });
-</script>
     <title>Inna's Tech Portfolio</title>
     <style>
         body {
