@@ -38,35 +38,37 @@
 
     <!-- Contenedores del chatbot - ESTOS DEBEN ESTAR AL FINAL -->
     <div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"></div>
-    <div id="chatwindow-container" style="position: fixed; bottom: 90px; right: 20px; z-index: 1000; display: none;"></div>
+<div id="chatwindow-container" style="position: fixed; bottom: 90px; right: 20px; z-index: 1000; display: none;"></div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        // Cargar solo los elementos necesarios del chatbot
-        $.get("chatbot.html", function(data) {
-            // Extraer los elementos del chatbot
-            const chatbubble = $(data).find('#chatbubble');
-            const chatwindow = $(data).find('#chatwindow');
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Solución alternativa sin jQuery para evitar problemas con GitHub Pages
+    fetch('chatbot.html')
+        .then(response => response.text())
+        .then(html => {
+            // Crear un parser para extraer los elementos
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
             
-            // Insertarlos en los contenedores
-            $("#chatbot-container").html(chatbubble);
-            $("#chatwindow-container").html(chatwindow);
+            // Clonar los elementos necesarios
+            const chatbubble = doc.getElementById('chatbubble').cloneNode(true);
+            const chatwindow = doc.getElementById('chatwindow').cloneNode(true);
             
-            // Reactivar los eventos
-            $("#chatbubble").click(function() {
-                $("#chatwindow").toggle();
+            // Insertar en los contenedores
+            document.getElementById('chatbot-container').appendChild(chatbubble);
+            document.getElementById('chatwindow-container').appendChild(chatwindow);
+            
+            // Añadir eventos
+            chatbubble.addEventListener('click', function() {
+                chatwindow.style.display = chatwindow.style.display === 'flex' ? 'none' : 'flex';
             });
             
-            $("#closechat").click(function() {
-                $("#chatwindow").hide();
+            document.getElementById('closechat').addEventListener('click', function() {
+                chatwindow.style.display = 'none';
             });
-            
-            console.log("Chatbot cargado correctamente!");
-        }).fail(function() {
-            console.error("Error al cargar el chatbot");
-        });
-    });
-    </script>
+        })
+        .catch(error => console.error('Error loading chatbot:', error));
+});
+</script>
 </body>
 </html>
