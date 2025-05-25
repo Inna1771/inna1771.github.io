@@ -37,11 +37,19 @@
     <p>🚧 Under construction... More coming soon!</p>
     <a href="projects/chatbot" class="btn">💬 Mi Chatbot</a>
     <a href="projects/api" class="btn">🔌 Mi API</a>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Contenedores donde se cargará el chatbot -->
+<div id="chatbubble-container"></div>
+<div id="chatwindow-container"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(function(){
+    // Cargar ambos elementos del chatbot
     $("#chatbubble-container").load("chatbot.html #chatbubble");
-    $("#chatwindow-container").load("chatbot.html #chatwindow");
+    $("#chatwindow-container").load("chatbot.html #chatwindow", function() {
+      // Este callback se ejecuta cuando la carga es exitosa
+      console.log("Chatbot cargado correctamente");
+    });
   });
 </script>
 </body>
