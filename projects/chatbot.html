@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* ChatBubble */
+    #chatbubble {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: #25D366; /* Verde WhatsApp */
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #chatbubble img {
+      width: 30px;
+    }
+    /* Chat Window (hidden by default) */
+    #chatwindow {
+      display: none;
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      flex-direction: column;
+    }
+    #chatheader {
+      background: #25D366;
+      color: white;
+      padding: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    #chatmessages {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    #chatinput {
+      padding: 10px;
+      border: none;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Chat Bubble -->
+<div id="chatbubble" onclick="toggleChat()">
+  <img src="https://img.icons8.com/color/48/000000/chat.png" alt="Chat">
+</div>
+
+<!-- Chat Window -->
+<div id="chatwindow">
+  <div id="chatheader">
+    <h3>InnaBot</h3>
+  </div>
+  <div id="chatmessages">
+    <p>Bot: ¡Hola! 👋 ¿En qué puedo ayudarte hoy?</p>
+  </div>
+  <input id="chatinput" type="text" placeholder="Escribe algo..." 
+         onkeypress="if(event.key=='Enter') sendMessage()">
+</div>
+
+<script>
+  function toggleChat() {
+    const chat = document.getElementById('chatwindow');
+    chat.style.display = chat.style.display === 'none' ? 'flex' : 'none';
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('chatinput');
+    const messages = document.getElementById('chatmessages');
+    
+    // Mensaje del usuario
+    messages.innerHTML += `<p><strong>Tú:</strong> ${input.value}</p>`;
+    
+    // Respuesta del bot
+    setTimeout(() => {
+      messages.innerHTML += `<p><strong>InnaBot:</strong> ${getBotResponse(input.value)}</p>`;
+      messages.scrollTop = messages.scrollHeight;
+    }, 500);
+    
+    input.value = '';
+  }
+
+  function getBotResponse(input) {
+    input = input.toLowerCase();
+    if (input.includes("hola")) return "¡Hola! Soy tu asistente virtual. Pregúntame sobre mis proyectos 😊";
+    if (input.includes("api")) return "Mis APIs están hechas con Node.js y Python. ¡Visita la sección de proyectos!";
+    return "Interesante pregunta. ¿Quieres saber más sobre mis habilidades backend?";
+  }
+</script>
+
+</body>
+</html>
