@@ -60,49 +60,39 @@
     <a href="projects/DA.html" class="btn">👉 Data analysis</a>
     <a href="projects/TP.html" class="btn">👉 Tooling Projects</a>
     
-    <p>🚧 Under construction... More coming soon!</p>
-    <!-- Justo antes del cierre </body> en tu index.html -->
-<div id="chatbot-placeholder"></div>
+ <p>🚧 Under construction... More coming soon!</p>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(function() {
-    // Cargar TODO el contenido del chatbot
-    $("#chatbot-placeholder").load("chatbot.html body", function(response, status) {
-        if (status === "success") {
-            // Mover los elementos a la posición correcta
-            const $chatbubble = $("#chatbubble");
-            const $chatwindow = $("#chatwindow");
+    <!-- Contenedores del chatbot - ESTOS DEBEN ESTAR AL FINAL -->
+    <div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"></div>
+    <div id="chatwindow-container" style="position: fixed; bottom: 90px; right: 20px; z-index: 1000; display: none;"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        // Cargar solo los elementos necesarios del chatbot
+        $.get("chatbot.html", function(data) {
+            // Extraer los elementos del chatbot
+            const chatbubble = $(data).find('#chatbubble');
+            const chatwindow = $(data).find('#chatwindow');
             
-            // Crear contenedores para posición fija
-            $('body').append(
-                '<div id="chatbubble-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"></div>' +
-                '<div id="chatwindow-container" style="position: fixed; bottom: 90px; right: 20px; z-index: 1000;"></div>'
-            );
+            // Insertarlos en los contenedores
+            $("#chatbot-container").html(chatbubble);
+            $("#chatwindow-container").html(chatwindow);
             
-            // Mover los elementos a sus contenedores
-            $("#chatbubble-container").append($chatbubble);
-            $("#chatwindow-container").append($chatwindow);
-            
-            // Eliminar el placeholder
-            $("#chatbot-placeholder").remove();
-            
-            // Reactivar los eventos (importante!)
-            document.getElementById('chatbubble').addEventListener('click', function() {
-                const chatWindow = document.getElementById('chatwindow');
-                chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+            // Reactivar los eventos
+            $("#chatbubble").click(function() {
+                $("#chatwindow").toggle();
             });
             
-            document.getElementById('closechat').addEventListener('click', function() {
-                document.getElementById('chatwindow').style.display = 'none';
+            $("#closechat").click(function() {
+                $("#chatwindow").hide();
             });
             
             console.log("Chatbot cargado correctamente!");
-        } else {
-            console.error("Error cargando el chatbot");
-        }
+        }).fail(function() {
+            console.error("Error al cargar el chatbot");
+        });
     });
-});
-</script>
+    </script>
 </body>
 </html>
