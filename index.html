@@ -36,8 +36,55 @@
     
  <p>🚧 Under construction... More coming soon!</p>
 
- <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-  <iframe src="chatbot.html" style="border: none; width: 300px; height: 500px;"></iframe>
+<!-- Contenedor del chatbot -->
+<div id="chatbot-wrapper" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <!-- Icono y ventana se insertarán aquí -->
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // URL ABSOLUTA de tu chatbot.html (¡cambia "inna1771" si tu usuario es diferente!)
+  const chatbotUrl = 'https://inna1771.github.io/chatbot.html';
+  
+  // 1. Cargar el HTML del chatbot
+  fetch(chatbotUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('No se pudo cargar el chatbot');
+      return response.text();
+    })
+    .then(html => {
+      // 2. Parsear el HTML
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      
+      // 3. Clonar los elementos (para evitar problemas de DOM)
+      const chatbubble = doc.getElementById('chatbubble').cloneNode(true);
+      const chatwindow = doc.getElementById('chatwindow').cloneNode(true);
+      
+      // 4. Insertar en la página
+      const wrapper = document.getElementById('chatbot-wrapper');
+      wrapper.appendChild(chatwindow);
+      wrapper.appendChild(chatbubble);
+      
+      // 5. Reactivar eventos (¡IMPORTANTE!)
+      chatbubble.addEventListener('click', function() {
+        chatwindow.style.display = chatwindow.style.display === 'flex' ? 'none' : 'flex';
+      });
+      
+      if (doc.getElementById('closechat')) {
+        document.getElementById('closechat').addEventListener('click', function() {
+          chatwindow.style.display = 'none';
+        });
+      }
+    })
+    .catch(error => {
+      console.error('Error cargando el chatbot:', error);
+      // Fallback: Enlace al chatbot
+      document.getElementById('chatbot-wrapper').innerHTML = `
+        <a href="${chatbotUrl}" style="display: block; width: 60px; height: 60px; background: #4CAF50; border-radius: 50%; color: white; font-size: 24px; text-align: center; line-height: 60px;">💬</a>
+      `;
+    });
+});
+</script>
 </body>
 </html>
