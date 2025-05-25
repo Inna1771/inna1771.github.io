@@ -37,5 +37,12 @@
     <p>🚧 Under construction... More coming soon!</p>
     <a href="projects/chatbot" class="btn">💬 Mi Chatbot</a>
     <a href="projects/api" class="btn">🔌 Mi API</a>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(function(){
+    $("#chatbubble-container").load("chatbot.html #chatbubble");
+    $("#chatwindow-container").load("chatbot.html #chatwindow");
+  });
+</script>
 </body>
 </html>
