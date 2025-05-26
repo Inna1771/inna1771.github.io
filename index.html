@@ -136,9 +136,14 @@ document.getElementById('sendmessage').addEventListener('click', function() {
         
         // Respuesta automática del bot (ejemplo)
         setTimeout(() => {
-          const botResponse = document.createElement('div');
-          botResponse.textContent = 'Bot: Thanks for the input, I can talk to you soon!';
-          document.getElementById('chatmessages').appendChild(botResponse);
+            const botResponses = [
+                "¡Interesante! Sigue explorando proyectos como los tuyos.",
+                "¿Has probado implementar esto en tu API?",
+                "Gracias por compartir. ¿Necesitas ayuda con algo más?",
+                "¡Buena idea! En mi repositorio tengo un proyecto similar."
+            ];
+            const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+            addMessageToChat("Bot", randomResponse, "bot-message");
         }, 800);
       }
     });
