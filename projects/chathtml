@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="https://img.icons8.com/fluency/48/000000/cat-footprint.png">
+  <title>Chat with limited options made in html</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f0f8ff;
+    }
+    {
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80');
+  background-size: cover;
+  background-attachment: fixed; /* Efecto parallax */
+}    
+    h1 {
+      color: #2c3e50;
+    }
+    .btn {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    /* ESTILOS DEL CHATBOT (NUEVOS) */
+    #chatbot-wrapper {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    #chatbubble {
+      width: 60px;
+      height: 60px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    #chatwindow {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .chat-header {
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    #chatmessages {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    .chat-input-container {
+      padding: 10px;
+      border-top: 1px solid #ccc;
+      display: flex;
+    }
+    #userinput {
+      flex-grow: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #sendmessage {
+      margin-left: 5px;
+      padding: 8px 15px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My Tech Journey</h1>
+  
+  <a href="projects/api.html" class="btn">👉 Mi Primer API</a>
+  <a href="projects/BE.html" class="btn">👉 Backend projects</a>
+  <a href="projects/DA.html" class="btn">👉 Data analysis</a>
+  <a href="projects/TP.html" class="btn">👉 Tooling Projects</a>
+  <a href="projects/TP.html" class="btn">👉 Chat HTML</a>
+  
+  <p>🚧 Under construction... More coming soon!</p>
+
+  <!-- Chatbot simplificado -->
+  <div id="chatbot-wrapper">
+    <div id="chatwindow">
+      <div class="chat-header">
+       Inna´s Chatbot
+        <span id="closechat" style="cursor: pointer;">×</span>
+      </div>
+      <div id="chatmessages"></div>
+      <div class="chat-input-container">
+        <input type="text" id="userinput" placeholder="Your turn...">
+        <button id="sendmessage">Send</button>
+      </div>
+    </div>
+    <div id="chatbubble">💬</div>
+  </div>
+
+  <script>
+    // Funcionalidad del chatbot
+    document.getElementById('chatbubble').addEventListener('click', function() {
+      const chatWindow = document.getElementById('chatwindow');
+      chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    });
+document.getElementById('sendmessage').addEventListener('click', function() {
+      const input = document.getElementById('userinput');
+      if(input.value.trim() !== '') {
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = 'You: ' + input.value;
+        document.getElementById('chatmessages').appendChild(messageDiv);
+        input.value = '';
+        
+        // Respuesta automática del bot (ejemplo)
+        setTimeout(() => {
+          const botResponse = document.createElement('div');
+          botResponse.textContent = 'Bot: Thanks for your message, I can talk to you soon!';
+          document.getElementById('chatmessages').appendChild(botResponse);
+        }, 800);
+      }
+    });
+  </script>
+</body>
