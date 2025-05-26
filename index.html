@@ -108,12 +108,12 @@
   <div id="chatbot-wrapper">
     <div id="chatwindow">
       <div class="chat-header">
-       Inna´s Chatbot
+       Ina´s Chatbot
         <span id="closechat" style="cursor: pointer;">×</span>
       </div>
       <div id="chatmessages"></div>
       <div class="chat-input-container">
-        <input type="text" id="userinput" placeholder="Hi there, how can i help you?...">
+        <input type="text" id="userinput" placeholder="Your turn...">
         <button id="sendmessage">Send</button>
       </div>
     </div>
@@ -136,14 +136,9 @@ document.getElementById('sendmessage').addEventListener('click', function() {
         
         // Respuesta automática del bot (ejemplo)
         setTimeout(() => {
-            const botResponses = [
-                "¡Interesante! Sigue explorando proyectos como los tuyos.",
-                "¿Has probado implementar esto en tu API?",
-                "Gracias por compartir. ¿Necesitas ayuda con algo más?",
-                "¡Buena idea! En mi repositorio tengo un proyecto similar."
-            ];
-            const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
-            addMessageToChat("Bot", randomResponse, "bot-message");
+          const botResponse = document.createElement('div');
+          botResponse.textContent = 'Bot: Thanks for your message, I can talk to you soon!';
+          document.getElementById('chatmessages').appendChild(botResponse);
         }, 800);
       }
     });
