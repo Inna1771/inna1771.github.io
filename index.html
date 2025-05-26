@@ -126,29 +126,22 @@
       const chatWindow = document.getElementById('chatwindow');
       chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
     });
-    document.getElementById('sendmessage').addEventListener('click', function() {
-    const userInput = document.getElementById('userinput');
-    const message = userInput.value.trim();
-    
-    if(message !== "") {
-        // 1. Mostrar mensaje del usuario
-        addMessageToChat("Tú", message, "user-message");
+document.getElementById('sendmessage').addEventListener('click', function() {
+      const input = document.getElementById('userinput');
+      if(input.value.trim() !== '') {
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = 'Tú: ' + input.value;
+        document.getElementById('chatmessages').appendChild(messageDiv);
+        input.value = '';
         
-        // 2. Respuesta automática del bot (ejemplo)
+        // Respuesta automática del bot (ejemplo)
         setTimeout(() => {
-            const botResponses = [
-                "¡Interesante! Sigue explorando proyectos como los tuyos.",
-                "¿Has probado implementar esto en tu API?",
-                "Gracias por compartir. ¿Necesitas ayuda con algo más?",
-                "¡Buena idea! En mi repositorio tengo un proyecto similar."
-            ];
-            const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
-            addMessageToChat("Bot", randomResponse, "bot-message");
+          const botResponse = document.createElement('div');
+          botResponse.textContent = 'Bot: ¡Gracias por tu mensaje!';
+          document.getElementById('chatmessages').appendChild(botResponse);
         }, 800);
-        
-        userInput.value = ""; // Limpiar input
-    }
-});
+      }
+    });
   </script>
 </body>
 </html>
