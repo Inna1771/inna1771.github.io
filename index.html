@@ -130,14 +130,14 @@ document.getElementById('sendmessage').addEventListener('click', function() {
       const input = document.getElementById('userinput');
       if(input.value.trim() !== '') {
         const messageDiv = document.createElement('div');
-        messageDiv.textContent = 'Tú: ' + input.value;
+        messageDiv.textContent = 'You: ' + input.value;
         document.getElementById('chatmessages').appendChild(messageDiv);
         input.value = '';
         
         // Respuesta automática del bot (ejemplo)
         setTimeout(() => {
           const botResponse = document.createElement('div');
-          botResponse.textContent = 'Bot: ¡Gracias por tu mensaje!';
+          botResponse.textContent = 'Bot: Thanks for the input, I can talk to you soon!';
           document.getElementById('chatmessages').appendChild(botResponse);
         }, 800);
       }
