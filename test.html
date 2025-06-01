@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Inna Drobinoga...</title>
+  <title>Portfolio de Inna</title>
+  <!-- Enlace al CSS -->
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* Reset básico */
-    * {
+    /* Estilos adicionales pueden ir aquí */
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
-    
-    body {
-<!-- Banner con efecto de código -->
-<div class="code-banner">
-  <!-- Fondo con código semi-transparente -->
-  <div class="code-background">
-    <pre><code>// AWS Cloud Practitioner
+  </style>
+</head>
+<body>
+  <!-- Banner -->
+  <div class="code-banner">
+    <!-- Fondo con código semi-transparente -->
+    <div class="code-background">
+      <pre><code>// AWS Cloud Practitioner
 function optimizeProcess() {
   const logs = analyzeLogs();
   return generateReport(logs);
@@ -29,20 +34,19 @@ df = pd.read_csv('data.csv')
 
 /* JavaScript Automation */
 console.log('Automatizando tareas...');</code></pre>
+    </div>
+    
+    <!-- Menú de tabs -->
+    <nav class="banner-tabs">
+      <div class="tab active" data-tab="home">Inicio</div>
+      <div class="tab" data-tab="projects">Proyectos</div>
+      <div class="tab" data-tab="skills">Habilidades</div>
+      <div class="tab" data-tab="experience">Experiencia</div>
+      <div class="tab" data-tab="certifications">Certificaciones</div>
+      <div class="tab" data-tab="blog">Blog</div>
+      <div class="tab" data-tab="contact">Contacto</div>
+    </nav>
   </div>
-  
-  <!-- Menú de tabs -->
-  <nav class="banner-tabs">
-    <div class="tab" data-tab="home">Inicio</div>
-    <div class="tab" data-tab="projects">Proyectos</div>
-    <div class="tab" data-tab="skills">Habilidades</div>
-    <div class="tab" data-tab="experience">Experiencia</div>
-    <div class="tab" data-tab="certifications">Certificaciones</div>
-    <div class="tab" data-tab="blog">Blog</div>
-    <div class="tab" data-tab="contact">Contacto</div>
-  </nav>
-</div>
-    }
     
     /* Sidebar */
     .sidebar {
@@ -166,5 +170,9 @@ console.log('Automatizando tareas...');</code></pre>
     <!-- Tu chat puede ir aquí -->
     <script src="chatbot.js"></script>
   </main>
+    <!-- Enlace al JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>
