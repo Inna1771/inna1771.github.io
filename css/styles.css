@@ -49,30 +49,16 @@ body {
 
 /* Barra de navegación */
 .code-banner {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background: rgba(35, 47, 62, 0.9);
-  z-index: 2;
-}
-
-.banner-tabs {
-  display: flex;
-  justify-content: center;
-  height: 100%;
+  height: 30px; /* Más compacto */
 }
 
 .tab {
-  color: white;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
 .tab:hover {
   background: rgba(255, 255, 255, 0.1);
 }
@@ -81,42 +67,6 @@ body {
   background: rgba(255, 153, 0, 0.2);
   border-bottom: 3px solid #ff9900;
 }/* Barra de navegación ajustada */
-.code-banner {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px; /* Reducido de 60px */
-  background: rgba(35, 47, 62, 0.9);
-  z-index: 2;
-}
-
-.banner-tabs {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  align-items: center; /* Centra verticalmente los tabs */
-  margin: 0;
-  padding: 0;
-}
-
-.tab {
-  color: white;
-  padding: 0 15px; /* Reducido el padding horizontal */
-  cursor: pointer;
-  font-size: 13px; /* Tamaño de fuente ligeramente menor */
-  transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.tab:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.tab.active {
-  background: rgba(255, 153, 0, 0.2);
-  border-bottom: 2px solid #ff9900;
 }
 /* Ajuste para el contenedor del banner */
 .portfolio-header {
