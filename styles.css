@@ -1,0 +1,91 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #232f3e; /* Azul AWS */
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+}
+
+.aws-badge {
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.aws-badge img {
+  width: 80px;
+  transition: transform 0.3s;
+}
+
+.aws-badge:hover img {
+  transform: scale(1.1);
+}
+
+.aws-badge::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff9900; /* Naranja AWS */
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.aws-badge:hover::after {
+  opacity: 1;
+}
+
+/* Workflow Animation */
+.workflow-demo {
+  margin-top: 40px;
+}
+
+.workflow-demo p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.animation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step {
+  background: #ff9900;
+  color: #232f3e;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Contenido principal */
+main {
+  margin-left: 290px; /* Ajuste para el sidebar */
+  padding: 20px;
+}
