@@ -212,3 +212,37 @@ main {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9900, 0 0 40px #ff9900;
   }
 }
+/* Estilos para la barra de navegación */
+.banner-tabs {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: rgba(35, 47, 62, 0.9); /* Fondo semitransparente */
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2; /* Asegura que esté sobre el fondo */
+}
+
+.tab {
+  color: white;
+  padding: 8px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab.active {
+  background: rgba(255, 153, 0, 0.3);
+  border-bottom: 2px solid #ff9900;
+}
