@@ -6,32 +6,50 @@
   --aws-light-orange: #ffad33;
 }
 
-/* Estilos generales */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  background-color: #f5f5f5;
-  color: #333;
+/* Banner Superior */
+.portfolio-header {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* Banner */
-.code-banner {
-  position: fixed;
+.code-background {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  background: linear-gradient(135deg, var(--aws-blue) 0%, var(--aws-dark-blue) 100%);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  height: 100%;
+  background-image: url('../images/code_background.jpg');
+  background-size: cover;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.portfolio-title {
+  position: relative;
+  z-index: 1;
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Barra de navegación */
+.code-banner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: rgba(35, 47, 62, 0.9);
 }
 
 .banner-tabs {
   display: flex;
-  height: 100%;
+  justify-content: center;
+  height: 60px;
 }
 
 .tab {
@@ -65,21 +83,22 @@ body {
   overflow-y: auto;
 }
 
-/* ... (resto de tus estilos existentes) ... */
-// Efecto hover mejorado para los badges
-document.querySelectorAll('.aws-badge').forEach(badge => {
-  badge.addEventListener('mouseenter', () => {
-    badge.style.transition = 'all 0.3s ease';
-  });
-});
+.profile-section {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
-// Animación del workflow al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-  const steps = document.querySelectorAll('.step');
-  steps.forEach((step, index) => {
-    step.style.animationDelay = `${index * 0.5}s`;
-  });
-});
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--aws-orange);
+  margin: 0 auto 15px;
+  display: block;
+}
+
+/* ... (resto de tus estilos para sidebar) ... */
 
 /* Contenido principal */
 main {
