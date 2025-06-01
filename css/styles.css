@@ -153,3 +153,20 @@ main {
   width: 100%;
   background: rgba(35, 47, 62, 0.9); /* Azul AWS semitransparente */
 }
+.portfolio-title {
+  font-family: 'Pacifico', cursive;
+  /* o */
+  font-family: 'Montserrat', sans-serif;
+}
+.portfolio-title {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff9900, 0 0 20px #ff9900;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9900, 0 0 40px #ff9900;
+  }
+}
