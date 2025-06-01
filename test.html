@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-<!DOCTYPE html>
-<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio de Inna</title>
-  <!-- Enlace al CSS -->
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Estilos adicionales pueden ir aquí */
+    /* Estilos generales */
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background-color: #f5f5f5;
     }
-  </style>
-</head>
-<body>
-  <!-- Banner -->
-  <div class="code-banner">
-    <!-- Fondo con código semi-transparente -->
-    <div class="code-background">
-      <pre><code>// AWS Cloud Practitioner
-function optimizeProcess() {
-  const logs = analyzeLogs();
-  return generateReport(logs);
-}
 
-# Python Data Analysis
-import pandas as pd
-df = pd.read_csv('data.csv')
+    /* Banner */
+    .code-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: linear-gradient(135deg, #232f3e 0%, #1a2533 100%);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* JavaScript Automation */
-console.log('Automatizando tareas...');</code></pre>
-    </div>
-    
-    <!-- Menú de tabs -->
-    <nav class="banner-tabs">
-      <div class="tab active" data-tab="home">Inicio</div>
-      <div class="tab" data-tab="projects">Proyectos</div>
-      <div class="tab" data-tab="skills">Habilidades</div>
-      <div class="tab" data-tab="experience">Experiencia</div>
-      <div class="tab" data-tab="certifications">Certificaciones</div>
-      <div class="tab" data-tab="blog">Blog</div>
-      <div class="tab" data-tab="contact">Contacto</div>
-    </nav>
-  </div>
-    
+    .banner-tabs {
+      display: flex;
+      height: 100%;
+    }
+
+    .tab {
+      color: white;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .tab.active {
+      background: rgba(255, 153, 0, 0.2);
+      border-bottom: 3px solid #ff9900;
+    }
+
     /* Sidebar */
     .sidebar {
       width: 250px;
-      background: #232f3e; /* Azul AWS */
+      background: #232f3e;
       color: white;
       padding: 20px;
       position: fixed;
-      height: 100vh;
+      top: 60px; /* Para que no se solape con el banner */
+      bottom: 0;
       overflow-y: auto;
     }
-    
-    /* Foto de perfil */
+
     .profile-section {
       text-align: center;
       margin-bottom: 25px;
     }
-    
+
     .profile-photo {
       width: 120px;
       height: 120px;
@@ -74,38 +75,36 @@ console.log('Automatizando tareas...');</code></pre>
       margin: 0 auto 15px;
       display: block;
     }
-    
+
     .profile-section h2 {
       font-size: 1.2rem;
       margin-bottom: 5px;
     }
-    
+
     .profile-title {
       color: #ff9900;
       font-size: 0.8rem;
     }
-    
-    /* Certificaciones */
+
     .aws-badge {
       margin: 15px 0;
       text-align: center;
     }
-    
+
     .aws-badge img {
       width: 70px;
       border-radius: 5px;
       transition: transform 0.3s;
     }
-    
+
     .aws-badge img:hover {
       transform: scale(1.1);
     }
-    
-    /* Workflow */
+
     .workflow-demo {
       margin-top: 20px;
     }
-    
+
     .step {
       background: #ff9900;
       color: #232f3e;
@@ -116,33 +115,48 @@ console.log('Automatizando tareas...');</code></pre>
       font-weight: bold;
       animation: pulse 2s infinite;
     }
-    
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.03); }
       100% { transform: scale(1); }
     }
-    
+
     /* Contenido principal */
     main {
       margin-left: 250px;
+      margin-top: 60px; /* Para compensar el banner */
       padding: 30px;
       flex: 1;
     }
   </style>
 </head>
 <body>
+  <!-- Banner -->
+  <div class="code-banner">
+    <nav class="banner-tabs">
+      <div class="tab active" data-tab="home">Inicio</div>
+      <div class="tab" data-tab="projects">Proyectos</div>
+      <div class="tab" data-tab="skills">Habilidades</div>
+      <div class="tab" data-tab="experience">Experiencia</div>
+      <div class="tab" data-tab="certifications">Certificaciones</div>
+      <div class="tab" data-tab="blog">Blog</div>
+      <div class="tab" data-tab="contact">Contacto</div>
+    </nav>
+  </div>
+
   <!-- Sidebar -->
   <div class="sidebar">
     <div class="profile-section">
-  <img 
-    src="https://raw.githubusercontent.com/Inna1771/inna1771.github.io/main/profile.jpg"  
-    alt="Inna Drobinoga"
-    class="profile-photo"
-  >
-  <h2>Inna Drobinoga</h2>
-  <p class="profile-title">AWS Specialist & Data Analyst</p>
-</div>
+      <img 
+        src="https://raw.githubusercontent.com/Inna1771/inna1771.github.io/main/profile.jpg"  
+        alt="Inna Drobinoga"
+        class="profile-photo"
+      >
+      <h2>Inna Drobinoga</h2>
+      <p class="profile-title">AWS Specialist & Data Analyst</p>
+    </div>
+    
     <!-- Certificaciones AWS -->
     <h3>Certificaciones AWS</h3>
     <div class="aws-badge">
@@ -157,7 +171,7 @@ console.log('Automatizando tareas...');</code></pre>
     <!-- Workflow -->
     <div class="workflow-demo">
       <h3>Proceso optimizado:</h3>
-      <div class="step">1. Recolección de logs</div>
+      <div class="step">1. Recolección de logs..</div>
       <div class="step">2. Análisis con Python</div>
       <div class="step">3. Reporte automatizado</div>
     </div>
@@ -167,12 +181,11 @@ console.log('Automatizando tareas...');</code></pre>
   <main>
     <h1>¡Bienvenido a mi portfolio!</h1>
     <p>Aquí encontrarás mis proyectos técnicos y experiencia en AWS.</p>
-    <!-- Tu chat puede ir aquí -->
-    <script src="chatbot.js"></script>
+    <!-- El chatbot se insertará aquí mediante JavaScript -->
   </main>
-    <!-- Enlace al JavaScript -->
+
+  <!-- JavaScript -->
+  <script src="chatbot.js"></script>
   <script src="script.js"></script>
-</body>
-</html>
 </body>
 </html>
