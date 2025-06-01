@@ -7,12 +7,11 @@ body {
 }
 
 /* Banner Superior */
-/* Banner Superior - Versión Final */
 .portfolio-header {
   position: relative;
-  height: 200px; /* Reducido para mejor proporción */
-  width: 100%;
-  margin-left: 250px; /* Ajuste por el sidebar */
+  height: 200px;
+  width: calc(100% - 250px); /* Resta el ancho del sidebar */
+  margin-left: 250px;
   overflow: hidden;
 }
 
@@ -35,27 +34,17 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centrado vertical */
-  align-items: center; /* Centrado horizontal */
 }
 
 .portfolio-title {
-  font-size: 3rem; /* Tamaño más adecuado */
+  font-size: 3rem;
   font-weight: 800;
   color: white;
   text-align: center;
-  margin: 0;
-  padding: 20px 0 0; /* Espacio superior para el título */
+  margin: auto 0 0; /* Empuja el título hacia arriba */
+  padding-top: 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1px;
-  width: 100%;
-}
-
-.banner-tabs {
-  width: 100%;
-  margin-top: auto; /* Empuja los tabs hacia abajo */
-  padding-bottom: 10px; /* Espacio inferior */
 }
 
 /* Barra de navegación */
