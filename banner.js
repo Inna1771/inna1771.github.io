@@ -12,4 +12,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     const tabId = this.getAttribute('data-tab');
     console.log(`Mostrando pestaña: ${tabId}`);
   });
+  document.querySelectorAll('.tab').forEach(tab => {
+  tab.style.transition = 'all 0.3s ease';
+});
 });
