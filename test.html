@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Inna Drobinoga</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: #232f3e; /* Azul AWS */
+      color: white;
+      padding: 20px;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    
+    /* Foto de perfil */
+    .profile-section {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ff9900;
+      margin: 0 auto 15px;
+      display: block;
+    }
+    
+    .profile-section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    
+    .profile-title {
+      color: #ff9900;
+      font-size: 0.8rem;
+    }
+    
+    /* Certificaciones */
+    .aws-badge {
+      margin: 15px 0;
+      text-align: center;
+    }
+    
+    .aws-badge img {
+      width: 70px;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+    
+    .aws-badge img:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Workflow */
+    .workflow-demo {
+      margin-top: 20px;
+    }
+    
+    .step {
+      background: #ff9900;
+      color: #232f3e;
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Contenido principal */
+    main {
+      margin-left: 250px;
+      padding: 30px;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Foto de perfil -->
+    <div class="profile-section">
+      <img 
+        src="<img src="https://i.imgur.com/5mBmJ5Z.jpg" alt="Inna Drobinoga" class="profile-photo">" 
+        alt="Inna Drobinoga"
+        class="profile-photo"
+      >
+      <h2>Inna Drobinoga</h2>
+      <p class="profile-title">AWS Specialist & Data Analyst</p>
+    </div>
+    
+    <!-- Certificaciones AWS -->
+    <h3>Certificaciones AWS</h3>
+    <div class="aws-badge">
+      <img src="https://images.credly.com/size/150x150/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Cloud Practitioner">
+      <p>Cloud Practitioner</p>
+    </div>
+    <div class="aws-badge">
+      <img src="https://images.credly.com/size/150x150/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect">
+      <p>Solutions Architect</p>
+    </div>
+    
+    <!-- Workflow -->
+    <div class="workflow-demo">
+      <h3>Proceso optimizado:</h3>
+      <div class="step">1. Recolección de logs</div>
+      <div class="step">2. Análisis con Python</div>
+      <div class="step">3. Reporte automatizado</div>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <main>
+    <h1>¡Bienvenido a mi portfolio!</h1>
+    <p>Aquí encontrarás mis proyectos técnicos y experiencia en AWS.</p>
+    <!-- Tu chat puede ir aquí -->
+  </main>
+</body>
+</html>
