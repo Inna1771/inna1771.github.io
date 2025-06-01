@@ -144,33 +144,112 @@ document.getElementById('sendmessage').addEventListener('click', function() {
       }
     });
   </script>
- <!-- Sidebar -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inna's Portfolio</title>
+  <style>
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Arial', sans-serif; 
+      display: flex;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: #232f3e; /* Azul AWS */
+      color: white;
+      padding: 20px;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    
+    /* Certificaciones */
+    .aws-badge {
+      margin: 15px 0;
+      text-align: center;
+    }
+    .aws-badge img {
+      width: 70px; /* Tamaño reducido */
+      transition: transform 0.3s;
+      border-radius: 5px;
+    }
+    .aws-badge:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* Workflow */
+    .workflow-demo {
+      margin-top: 30px;
+    }
+    .workflow-demo p {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #ff9900; /* Naranja AWS */
+    }
+    .step {
+      background: #ff9900;
+      color: #232f3e;
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Contenido principal */
+    main {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
   <div class="sidebar">
-    <!-- Certificaciones AWS -->
-    <div class="aws-badge" data-tooltip="AWS Cloud Practitioner">
-      <img src="https://images.credly.com/size/680x680/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified">
+    <h3>Certificaciones AWS</h3>
+    <div class="aws-badge">
+      <img src="https://images.credly.com/size/150x150/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Cloud Practitioner">
+      <p>Cloud Practitioner</p>
     </div>
-    <div class="aws-badge" data-tooltip="AWS Solutions Architect">
-      <img src="https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect">
+    <div class="aws-badge">
+      <img src="https://images.credly.com/size/150x150/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect">
+      <p>Solutions Architect</p>
     </div>
-
-    <!-- Workflow Animation -->
+    
     <div class="workflow-demo">
-      <p>Proceso optimizado en AWS:</p>
-      <div class="animation">
-        <div class="step">1. Logs</div>
-        <div class="step">2. Análisis</div>
-        <div class="step">3. Reporte</div>
-      </div>
+      <p>Proceso optimizado:</p>
+      <div class="step">1. Recolección de logs</div>
+      <div class="step">2. Análisis con Python</div>
+      <div class="step">3. Reporte automatizado</div>
     </div>
   </div>
 
-  <!-- Contenido principal (placeholder) -->
+  <!-- Contenido principal -->
   <main>
-    <h1>¡Hola! Soy Inna</h1>
-    <p>Desarrolladora y Analista de Datos</p>
+    <h1>Inna Drobinoga</h1>
+    <p>Especialista en AWS y Análisis de Datos</p>
+    <!-- Tu chat existente puede ir aquí -->
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    // Opcional: Efectos interactivos
+    document.querySelectorAll('.aws-badge').forEach(badge => {
+      badge.addEventListener('click', () => {
+        window.open('https://www.credly.com/users/inna-drobinoga/badges', '_blank');
+      });
+    });
+  </script>
 </body>
 </html>
