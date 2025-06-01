@@ -3,30 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
   <title>Portfolio de Inna</title>
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    /* Estilos generales */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-    }
-  </style>
 </head>
 <body>
-  <!-- Banner Superior con Imagen y Título -->
+  <!-- Banner Superior -->
   <header class="portfolio-header">
-    <!-- Imagen de fondo con código -->
     <div class="code-background"></div>
-    
-    <!-- Título principal -->
-    <h1 class="portfolio-title">Inna's Portfolio</h1>
-    
-    <!-- Barra de navegación -->
-    <div class="code-banner">
+    <div class="header-content">
+      <h1 class="portfolio-title">Inna's Portfolio</h1>
+      
+      <!-- Barra de navegación -->
       <nav class="banner-tabs">
         <div class="tab active" data-tab="home">Inicio</div>
         <div class="tab" data-tab="projects">Proyectos</div>
@@ -40,45 +28,48 @@
   </header>
 
   <!-- Sidebar -->
-  <div class="sidebar">
+  <aside class="sidebar">
     <div class="profile-section">
-      <img 
-        src="https://raw.githubusercontent.com/Inna1771/inna1771.github.io/main/images/profile.jpg"  
-        alt="Inna Drobinoga"
-        class="profile-photo"
-      >
+      <div class="profile-photo-container">
+        <img 
+          src="images/profile.jpg"  
+          alt="Inna Drobinoga"
+          class="profile-photo"
+        >
+      </div>
       <h2>Inna Drobinoga</h2>
       <p class="profile-title">AWS Specialist & Data Analyst</p>
     </div>
     
     <!-- Certificaciones AWS -->
-    <h3>Certificaciones AWS</h3>
-    <div class="aws-badge">
-      <img src="https://images.credly.com/size/150x150/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Cloud Practitioner">
-      <p>Cloud Practitioner</p>
-    </div>
-    <div class="aws-badge">
-      <img src="https://images.credly.com/size/150x150/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect">
-      <p>Solutions Architect</p>
-    </div>
+    <section class="certifications">
+      <h3>Certificaciones AWS</h3>
+      <div class="aws-badge">
+        <img src="https://images.credly.com/size/150x150/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Cloud Practitioner">
+        <p>Cloud Practitioner</p>
+      </div>
+      <div class="aws-badge">
+        <img src="https://images.credly.com/size/150x150/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect">
+        <p>Solutions Architect</p>
+      </div>
+    </section>
     
     <!-- Workflow -->
-    <div class="workflow-demo">
+    <section class="workflow-demo">
       <h3>Proceso optimizado:</h3>
       <div class="step">1. Recolección de logs...</div>
       <div class="step">2. Análisis con Python</div>
       <div class="step">3. Reporte automatizado</div>
-    </div>
-  </div>
+    </section>
+  </aside>
 
   <!-- Contenido principal -->
-  <main>
+  <main class="main-content"> 
     <h1>¡Bienvenido a mi portfolio!</h1>
     <p>Aquí encontrarás mis proyectos técnicos y experiencia en AWS.</p>
-    <!-- El chatbot se insertará aquí mediante JavaScript -->
   </main>
 
-  <!-- JavaScript -->
+ <!-- JavaScript -->
   <script src="js/chatbot.js"></script>
   <script src="js/banner.js"></script>
   <script src="js/sidebar.js"></script>
