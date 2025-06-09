@@ -115,6 +115,24 @@
       </div>
     </section>
   </aside>
+
+    <!-- JavaScript para manejar los proyectos -->
+  <script>
+    function openProject(tech) {
+      // Aquí crearías tus páginas específicas para cada tecnología
+      // Por ahora usaremos un placeholder
+      const projectContent = `
+        <div style="text-align:center; padding:50px;">
+          <h1>Proyectos de ${tech.toUpperCase()}</h1>
+          <p>🚧 Esta sección está en construcción 🚧</p>
+          <p>Estoy trabajando en mostrar mis proyectos con ${tech}</p>
+          <button onclick="window.history.back()">← Volver al Portfolio</button>
+        </div>
+      `;
+      
+      document.querySelector('.main-content').innerHTML = projectContent;
+    }
+  </script>
   <!-- Banner Superior -->
  <header class="portfolio-header">
   <div class="code-background"></div>
